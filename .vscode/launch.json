@@ -1,0 +1,94 @@
+{
+  "configurations": [
+    {
+      "name": "Launch api",
+      "cwd": "${workspaceFolder}/apps/api",
+      "request": "launch",
+      "type": "node-terminal",
+      "noDebug": false,
+      "command": "pnpm run dev",
+      "skipFiles": ["**/<node_internals>/**", "**/node_modules/**", "!**/node_modules/@cui/**"],
+      "sourceMaps": true,
+      "smartStep": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "presentation": {
+        "hidden": false,
+        "group": "2",
+        "order": 1
+      }
+    },
+    {
+      "name": "Launch demo:serve",
+      "cwd": "${workspaceFolder}/apps/demo",
+      "request": "launch",
+      "type": "node-terminal",
+      "noDebug": false,
+      "command": "pnpm run dev",
+      "skipFiles": ["**/<node_internals>/**", "**/node_modules/**", "!**/node_modules/@hui/**"],
+      "sourceMaps": true,
+      "smartStep": true,
+      "internalConsoleOptions": "openOnSessionStart",
+      "presentation": {
+        "hidden": false,
+        "group": "3",
+        "order": 1
+      }
+    },
+    {
+      "name": "Launch demo:client (edge)",
+      "type": "pwa-msedge",
+      "request": "launch",
+      "url": "http://localhost:3006/",
+      "webRoot": "${workspaceFolder}/apps/demo/src",
+      "userDataDir": "${workspaceFolder}/.out/edge/apps",
+      "internalConsoleOptions": "openOnSessionStart",
+      "sourceMaps": true,
+      "cwd": "${workspaceFolder}/apps/demo",
+      "smartStep": true,
+      "presentation": {
+        "hidden": false,
+        "group": "3",
+        "order": 2
+      }
+    },
+    {
+      "name": "Launch demo:client (chrome)",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:3006/",
+      "webRoot": "${workspaceFolder}/apps/demo/app",
+      "userDataDir": "${workspaceFolder}/.out/chrome/apps",
+      "internalConsoleOptions": "openOnSessionStart",
+      "sourceMaps": true,
+      "cwd": "${workspaceFolder}/apps/demo",
+      "smartStep": true,
+      "presentation": {
+        "hidden": false,
+        "group": "3",
+        "order": 2
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug demo (edge)",
+      "configurations": ["Launch api", "Launch demo:serve", "Launch demo:client (edge)"],
+      "stopAll": true,
+      "presentation": {
+        "hidden": false,
+        "group": "1",
+        "order": 1
+      }
+    },
+    {
+      "name": "Debug demo (chrome)",
+      "configurations": ["Launch api", "Launch demo:serve", "Launch demo:client (chrome)"],
+      "stopAll": true,
+      "presentation": {
+        "hidden": false,
+        "group": "1",
+        "order": 1
+      }
+    }
+  ]
+}

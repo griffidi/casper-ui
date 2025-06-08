@@ -1,0 +1,101 @@
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 100%;
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+
+  & > header,
+  & > footer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    padding-inline: 1.25rem;
+    background: "transparent";
+  }
+
+  & > header {
+    inset-block-start: 0;
+    justify-content: space-between;
+    height: var(--app-header-height);
+    z-index: 1000;
+  }
+
+  & > footer {
+    inset-block-end: 0;
+    justify-content: space-between;
+    padding-block: 0.75rem;
+    z-index: 1;
+  }
+
+  & > main {
+    height: calc(100% + (1.25rem * 2));
+    width: 100%;
+    margin-block-start: calc(var(--app-header-height) + 1.25rem);
+    margin-block-end: calc(var(--app-footer-height) + 1.25rem);
+    padding-inline: 1.25rem;
+  }
+}
+
+input {
+  font-size: var(--gui-font-size);
+  font-weight: var(--gui-font-weight);
+  padding: 0.5rem 0.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gray-700);
+  background-color: var(--gui-color-background-input);
+  color: var(--gui-color-input);
+  outline: none;
+  font-weight: var(--gui-font-weight-input);
+
+  &::placeholder {
+    color: var(--gui-color-text-lighter);
+  }
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px var(--gui-color-text-fill-background) inset;
+    -webkit-text-fill-color: var(--gui-color-text-fill);
+  }
+  &:autofill {
+    box-shadow: 0 0 0 100px var(--gui-color-text-fill-background) inset;
+    color: var(--gui-color-text-fill);
+  }
+}
+
+a {
+  color: var(--gui-color-text);
+  text-decoration: none;
+  font-weight: var(--gui-font-weight-bold);
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--gui-color-primary);
+  }
+}
+
+
+  button {
+    &:has(svg) {
+      cursor: pointer;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      transition: all 0.2s ease-in-out;
+      color: var(--gui-color-text);
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.2s ease-in-out;
+        color: var(--gui-color-primary);
+      }
+    }
+  }

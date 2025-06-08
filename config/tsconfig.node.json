@@ -1,0 +1,14 @@
+{
+  "declaration": true,
+  "compilerOptions": {
+    "noEmit": true, // Optional - true if you only want to execute the code
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "rewriteRelativeImportExtensions": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "types": ["node"]
+  },
+  "files": []
+}

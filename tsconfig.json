@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "composite": false
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/demo"
+    },
+    {
+      "path": "./apps/api"
+    },
+    {
+      "path": "./packages/components"
+    },
+    {
+      "path": "./packages/core"
+    }
+  ]
+}

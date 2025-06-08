@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "emitDeclarationOnly": true,
+    "rootDir": "${configDir}/src",
+    "outDir": "${configDir}/build",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "target": "ESNext",
+    "paths": {
+      "@/*": ["${configDir}/app/*"]
+    }
+  }
+}

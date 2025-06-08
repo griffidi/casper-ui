@@ -1,0 +1,18 @@
+{
+  "extends": ["../../config/tsconfig.base.json"],
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": "src",
+    "types": ["node"],
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "allowArbitraryExtensions": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "paths": {
+      "@/*": ["./*"],
+      "@cui/core/*": ["../core/src/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}

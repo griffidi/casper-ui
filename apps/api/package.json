@@ -1,0 +1,52 @@
+{
+  "name": "@cui/api",
+  "private": true,
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": ">=23.11.0"
+  },
+  "type": "module",
+  "imports": {
+    "#app/*": "./src/*",
+    "#app/prisma/client/*": "./prisma/generated/prisma/client/*",
+    "#app/prisma/type-graphql/index.ts": "./prisma/generated/type-graphql/index.ts",
+    "#app/prisma/seed/*": "./prisma/seed/*"
+  },
+  "scripts": {
+    "db:clean": "rm -rf prisma/dev.db prisma/generated",
+    "db:generate": "pnpm prisma generate && cd ./node_modules/@prisma/generated/type-graphql && pnpm init",
+    "db:seed": "node --loader ts-node/esm prisma/seed/seed.ts --tsconfig=tsconfig.json",
+    "db": "pnpm run db:clean && pnpm run db:generate && pnpx prisma db push && pnpm run db:seed",
+    "build": "task build",
+    "dev": "node --loader ts-node/esm --watch --env-file=.env --experimental-default-config-file --no-warnings=ExperimentalWarning src/index.ts"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.12.0",
+    "@apollo/utils.keyvaluecache": "^3.1.0",
+    "@as-integrations/koa": "^1.1.1",
+    "@graphql-tools/schema": "^10.0.23",
+    "@koa/cors": "^5.0.0",
+    "@prisma/client": "^6.6.0",
+    "graphql": "^16.10.0",
+    "graphql-fields": "^2.0.3",
+    "graphql-scalars": "^1.24.2",
+    "jsonwebtoken": "^9.0.2",
+    "koa": "^2.16.1",
+    "koa-bodyparser": "^4.4.1",
+    "reflect-metadata": "^0.2.2",
+    "tslib": "^2.8.1",
+    "type-graphql": "^2.0.0-rc.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.7.0",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/koa": "^2.15.0",
+    "@types/koa-bodyparser": "^4.3.12",
+    "@types/koa__cors": "^5.0.0",
+    "@types/node": "latest",
+    "prisma": "^6.6.0",
+    "ts-node": "^10.9.2",
+    "typegraphql-prisma": "^0.28.0",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "@cui/components",
+  "private": false,
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": ">=23.11.0"
+  },
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    "./button/*.tsx": {
+      "import": "./src/button/*.tsx"
+    },
+    "./dropdownlist/*.tsx": {
+      "import": "./src/dropdownlist/*.tsx"
+    },
+    "./progress-bard/*.tsx": {
+      "import": "./src/progress-bar/*.tsx"
+    },
+    "./progress-spinner/*.tsx": {
+      "import": "./src/progress-spinner/*.tsx"
+    },
+    "./styles/*.css": {
+      "import": "./src/styles/*.css"
+    },
+    "./types/*.ts": {
+      "import": "./src/types/*.ts"
+    },
+    "./index.css": {
+      "import": "./src/index.css"
+    },
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "dev": "task build",
+    "build": "task build"
+  },
+  "dependencies": {
+    "@carbon/icons-react": "^11.59.0",
+    "@griffel/react": "^1.5.29",
+    "@cui/core": "workspace:*",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-tiny-virtual-list": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,15 @@
+query getCustomerContacts($customerId: String!) {
+  customerContact(where: { customerId: { equals: $customerId } }) {
+    id
+    firstName
+    lastName
+    streetAddress
+    city
+    stateId
+    zip
+    phone
+    email
+    dateCreated
+    dateUpdated
+  }
+}

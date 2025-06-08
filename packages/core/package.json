@@ -1,0 +1,33 @@
+{
+  "name": "@cui/core",
+  "private": false,
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": ">=23.11.0"
+  },
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "dev": "task build",
+    "build": "task build"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

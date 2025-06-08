@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["views"]
+  output          = "generated/prisma/client"
+}
+
+generator typegraphql {
+  provider               = "typegraphql-prisma"
+  output                 = "../node_modules/@prisma/generated/type-graphql"
+  // output                 = "generated/type-graphql"
+  contextPrismaKey       = "prisma"
+  emitRedundantTypesInfo = true
+  simpleResolvers        = true
+  useSimpleInputs        = true
+}
+
+model State {
+  id              String            @id @default(uuid())
+  name            String
+  code            String
+  user            User[]
+  customer        Customer[]
+  customerContact CustomerContact[]
+}
+
+model User {
+  id             String   @id @default(uuid())
+  firstName      String
+  lastName       String
+  email          String   @unique
+  streetAddress  String
+  streetAddress2 String?
+  city           String
+  stateId        String
+  zip            String
+  phone          String
+  password       String
+  role           String
+  dateCreated    DateTime @default(now())
+  state          State    @relation(fields: [stateId], references: [id])
+}
+
+// enum Role {
+//   ADMIN
+//   USER
+//   SALES
+//   ACCOUNTING
+// }
+
+model Customer {
+  id              String            @id @default(uuid())
+  name            String
+  streetAddress   String
+  streetAddress2  String?
+  city            String
+  stateId         String
+  zip             String
+  phone           String
+  dateCreated     DateTime          @default(now())
+  dateUpdated     DateTime          @updatedAt
+  CustomerContact CustomerContact[]
+  state           State             @relation(fields: [stateId], references: [id])
+}
+
+model CustomerContact {
+  id             String   @id @default(uuid())
+  customerId     String
+  firstName      String
+  lastName       String
+  email          String
+  streetAddress  String
+  streetAddress2 String?
+  city           String
+  stateId        String
+  zip            String
+  phone          String
+  dateCreated    DateTime @default(now())
+  dateUpdated    DateTime @updatedAt
+  customer       Customer @relation(fields: [customerId], references: [id])
+  state          State    @relation(fields: [stateId], references: [id])
+}

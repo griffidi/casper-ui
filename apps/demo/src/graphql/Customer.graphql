@@ -1,0 +1,23 @@
+query getCustomers {
+  customers {
+    ...CustomerParts
+  }
+}
+
+query getCustomerById($id: String!) {
+  customer(where: { id: $id }) {
+    ...CustomerParts
+  }
+}
+
+mutation updateCustomer($id: String!, $data: CustomerUpdateInput!) {
+  updateOneCustomer(where: { id: $id }, data: $data) {
+    ...CustomerParts
+  }
+}
+
+mutation deleteCustomer($id: String!) {
+  deleteOneCustomer(where: { id: $id }) {
+    ...CustomerParts
+  }
+}
