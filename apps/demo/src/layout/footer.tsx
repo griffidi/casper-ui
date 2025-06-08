@@ -1,4 +1,8 @@
+import LinkButton from '@cui/components/button/link-button.tsx';
 import { makeStyles } from '@griffel/react';
+import GitHubIcon from '@/components/icons/github.tsx';
+import LinkedInIcon from '@/components/icons/linkedin.tsx';
+import config from '@/config.ts';
 
 const useStyles = makeStyles({
   footer: {
@@ -8,9 +12,26 @@ const useStyles = makeStyles({
     padding: '1rem',
   },
 
+  nav: {
+    display: 'flex',
+    alignItems: 'center',
+
+    '& ul': {
+      display: 'flex',
+      listStyle: 'none',
+      margin: 0,
+      padding: 0,
+      gap: '0.3rem',
+    },
+
+    '& li': {
+      margin: 0,
+      padding: 0,
+    },
+  },
+
   rights: {
-    fontSize: '0.875rem',
-    color: '#666',
+    fontSize: 'var(--gui-font-size-subtitle)',
   },
 });
 
@@ -19,12 +40,13 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer}>
-      <nav>
+      <nav className={classes.nav}>
         <ul>
           <li>
-            <a href="/privacy-policy" className="hover:underline">
-              GitHub
-            </a>
+            <LinkButton href={config.github} icon={<GitHubIcon />} />
+          </li>
+          <li>
+            <LinkButton href={config.linkedin} icon={<LinkedInIcon />} />
           </li>
         </ul>
       </nav>

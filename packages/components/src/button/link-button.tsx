@@ -6,7 +6,7 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '0.5rem 1rem',
+    width: 'fit-content',
     fontSize: '1rem',
     fontWeight: 'bold',
     color: 'var(--gui-color-text)',
@@ -15,8 +15,9 @@ const useStyles = makeStyles({
     borderRadius: '0.25rem',
     cursor: 'pointer',
     transition: 'background-color 0.3s ease',
-    ':hover': {
-      backgroundColor: 'var(--gui-color-hover)',
+
+    '&:hover, &:hover svg': {
+      color: 'var(--gui-color-primary)',
     },
   },
 
@@ -38,8 +39,6 @@ const useStyles = makeStyles({
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '1.5rem',
-    height: '1.5rem',
     fontSize: '1.25rem',
     color: 'var(--gui-color-text)',
     marginRight: '0.5rem',
@@ -50,7 +49,7 @@ type LinkButtonProps = {
   disabled?: boolean;
   href?: string;
   icon?: ReactNode;
-  label: string;
+  label?: string;
 } & HTMLAttributes<HTMLAnchorElement>;
 
 const LinkButton: FC<LinkButtonProps> = ({

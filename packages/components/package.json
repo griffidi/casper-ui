@@ -16,6 +16,9 @@
     "./dropdownlist/*.tsx": {
       "import": "./src/dropdownlist/*.tsx"
     },
+    "./list/*.tsx": {
+      "import": "./src/list/*.tsx"
+    },
     "./progress-bard/*.tsx": {
       "import": "./src/progress-bar/*.tsx"
     },

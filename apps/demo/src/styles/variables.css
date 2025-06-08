@@ -43,8 +43,16 @@
   --radius-xl: 12px;
   --radius-2xl: 16px;
 
-  /* font */
+  /* typography */
   --font-family-sans: 'Inter', sans-serif;
+  --gui-font-size-subtitle: 0.875rem; /* 14px */
+  --gui-font-size-title: 1.125rem; /* 18px */
+  --gui-font-size-body: 1rem; /* 16px */
+  --gui-font-size-small: 0.875rem; /* 14px */
+  --gui-font-size-tiny: 0.75rem; /* 12px */
+  --gui-font-size-label: 0.875rem; /* 14px */
+  --gui-font-size-button: 0.875rem; /* 14px */
+  --gui-font-size-input: 0.875rem; /* 14px */
   --gui-font-size: 14px;
   --gui-font-weight: 400;
   --gui-font-weight-input: 500;

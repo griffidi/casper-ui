@@ -18,6 +18,7 @@ const GuiIcon: FC<GuiProps> = ({ className, size = 24 }) => {
     >
       <title>Ghost UI</title>
       <defs>
+        {/** biome-ignore lint/nursery/useUniqueElementIds: literal id is ok in svg mask */}
         <mask id="ipTGhost0">
           <g fill="none" stroke="#fff" strokeLinejoin="round" strokeWidth="3">
             <path d="m8 44l4-4l4 4l4-6l4 6l4-6l4 6l4-4l4 4V20c0-8.837-7.163-16-16-16S8 11.163 8 20z" />
