@@ -8,7 +8,7 @@
   /* background colors */
   --gui-color-background: var(--color-gray-900);
   --gui-color-background-darker: color-mix(in oklab, var(--gui-color-background) 90%, black);
-  --gui-color-background-lighter: color-mix(in oklab, var(--gui-color-background) 90%, black);
+  --gui-color-background-lighter: color-mix(in oklab, var(--gui-color-background) 97%, white);
   --gui-color-background-hover: var(--gui-color-background-darker);
 
   /* text color */

@@ -11,8 +11,11 @@ export default {
     display: 'flex',
     flexDirection: 'column',
     gap: '1.3rem',
+    padding: '2rem',
     margin: '0 auto',
     width: '300px',
+    backgroundColor: 'var(--gui-color-secondary)',
+    borderRadius: 'var(--radius-2xl)',
 
     '> header': {
       fontSize: '3rem',
