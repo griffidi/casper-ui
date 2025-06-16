@@ -7,15 +7,15 @@ select {
   display: flex;
   align-items: center;
   padding: 0 8px;
-  border: 1px solid var(--gui-color-border);
+  border: 1px solid var(--cui-color-border);
   border-radius: 6px;
-  background-color: var(--gui-color-background-input);
-  color: var(--gui-color-input);
+  background-color: var(--cui-color-background-input);
+  color: var(--cui-color-input);
   transition: 0.4s;
 
   &:is(:focus-visible, :hover, :open) {
-    background: var(--gui-color-border);
-    color: var(--gui-color-background-input);
+    background: var(--cui-color-border);
+    color: var(--cui-color-background-input);
   }
 
   &::picker-icon {
@@ -28,11 +28,11 @@ select {
 }
 
 ::picker(select) {
-  border: 1px solid var(--gui-color-border);
+  border: 1px solid var(--cui-color-border);
   border-radius: 6px;
-  background-color: var(--gui-color-background);
-  color: var(--gui-color-text);
-  font-weight: var(--gui-font-weight);
+  background-color: var(--cui-color-background);
+  color: var(--cui-color-text);
+  font-weight: var(--cui-font-weight-normal);
   max-height: clamp(200px, 50vh, 300px);
 }
 
@@ -49,11 +49,11 @@ option {
   }
 
   &:is(:focus-visible, :hover) {
-    background: var(--gui-color-background-hover);
+    background: var(--cui-color-background-hover);
   }
 
   &:checked {
-    background: var(--gui-color-background-hover);
-    color: var(--gui-color-primary);
+    background: var(--cui-color-background-hover);
+    color: var(--cui-color-primary);
   }
 }

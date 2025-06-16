@@ -1,19 +1,13 @@
-@import "../styles/variables.css";
-@import "../styles/layout.css";
+@import "./variables.css";
+@import "./layout.css";
 
 * {
   box-sizing: border-box;
 }
 
-
 .brand-text-color {
-  background: linear-gradient(
-    to right,
-    var(--gui-color-primary),
-    var(--gui-color-secondary)
-  );
+  background: linear-gradient(to right, var(--cui-color-primary), var(--cui-color-secondary));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-

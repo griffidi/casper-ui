@@ -1,67 +1,9 @@
 :root {
-  /* primary/secondary colors */
-  --gui-color-primary: var(--color-blue-500);
-  --gui-color-primary-lighter: oklch(54.1% 0.281 293.009);
-  --gui-color-secondary: var(--color-violet-800);
-  --gui-color-gray: var(--color-gray-700);
-
-  /* background colors */
-  --gui-color-background: var(--color-gray-900);
-  --gui-color-background-darker: color-mix(in oklab, var(--gui-color-background) 90%, black);
-  --gui-color-background-lighter: color-mix(in oklab, var(--gui-color-background) 97%, white);
-  --gui-color-background-hover: var(--gui-color-background-darker);
-
-  /* text color */
-  --gui-color-text: var(--color-slate-300);
-  --gui-color-light-gray: var(--color-slate-200);
-  --gui-color-text-disabled: var(--color-slate-600);
-  --gui-color-text-fill-background: var(--color-slate-300);
-  --gui-color-text-fill: var(--color-slate-700);
-  --gui-color-text-lighter: var(--color-slate-100);
-  --gui-color-text-darker: var(--color-slate-600);
-  --gui-color-background-input: var(--color-slate-400);
-  --gui-color-input: var(--color-slate-600);
-  --gui-color-border: var(--color-slate-700);
-  --gui-color-disabled-button: var(--color-slate-600);
-  --gui-color-disabled-button-text: var(--color-slate-300);
-
-  /* gradient colors */
-  --gui-color-gradient-brand: linear-gradient(
-    90deg,
-    var(--color-blue-700) 0%,
-    var(--color-violet-800) 100%
-  );
-  --gui-color-gradient-brand-reverse: linear-gradient(
-    90deg,
-    var(--color-violet-800) 0%,
-    var(--color-blue-700) 100%
-  );
-
   --app-header-height: 60px;
 
-  /* tailwindcss fixes */
-  --radius-xl: 12px;
-  --radius-2xl: 16px;
-
-  /* typography */
-  --font-family-sans: 'Inter', sans-serif;
-  --gui-font-size-subtitle: 0.875rem; /* 14px */
-  --gui-font-size-title: 1.125rem; /* 18px */
-  --gui-font-size-body: 1rem; /* 16px */
-  --gui-font-size-small: 0.875rem; /* 14px */
-  --gui-font-size-tiny: 0.75rem; /* 12px */
-  --gui-font-size-label: 0.875rem; /* 14px */
-  --gui-font-size-button: 0.875rem; /* 14px */
-  --gui-font-size-input: 0.875rem; /* 14px */
-  --gui-font-size: 14px;
-  --gui-font-weight: 400;
-  --gui-font-weight-input: 500;
-  --gui-font-weight-bold: 600;
-  --gui-font-weight-bolder: 700;
-
   @media (prefers-color-scheme: light) {
-    --gui-color-background: var(--color-white);
-    --gui-color-text: var(--color-slate-950);
+    --cui-color-background: var(--cui-color-white);
+    --cui-color-text: var(--cui-color-slate-950);
   }
 }
 

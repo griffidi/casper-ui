@@ -9,21 +9,21 @@ const useStyles = makeStyles({
     padding: '0.5rem 1rem',
     width: 'fit-content',
     fontSize: '1rem',
-    color: 'var(--gui-color-text)',
-    backgroundColor: 'var(--gui-color-background)',
+    color: 'var(--cui-color-text)',
+    backgroundColor: 'var(--cui-color-background)',
     cursor: 'pointer',
     transition: 'background-color 0.3s ease',
 
     '&:hover': {
-      backgroundColor: 'var(--gui-color-hover)',
+      backgroundColor: 'var(--cui-color-hover)',
     },
 
     '&:active': {
-      backgroundColor: 'var(--gui-color-active)',
+      backgroundColor: 'var(--cui-color-active)',
     },
 
     '&:disabled': {
-      backgroundColor: 'var(--gui-color-disabled)',
+      backgroundColor: 'var(--cui-color-disabled)',
       cursor: 'not-allowed',
     },
   },

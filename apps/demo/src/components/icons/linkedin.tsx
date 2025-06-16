@@ -8,7 +8,7 @@ type LinkedInProps = {
 const LinkedInIcon: FC<LinkedInProps> = ({ className, size = 24 }) => {
   return (
     <svg
-      data-icon="gui-icon"
+      data-icon="cui-icon"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 12 12"
       className={className}

@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     width: '1.5rem',
     height: '1.5rem',
     fontSize: '1.25rem',
-    color: 'var(--gui-color-text)',
+    color: 'var(--cui-color-text)',
   },
 });
 

@@ -28,7 +28,7 @@ const DropdownList: FC<DropdownListProps & HTMLAttributes<HTMLSelectElement>> = 
   return (
     <select
       name={name}
-      className="gui-dropdownlist"
+      className="cui-dropdownlist"
       value={value}
       defaultValue={defaultValue}
       onChange={e => onChange?.(e.target.value)}

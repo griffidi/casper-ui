@@ -14,8 +14,8 @@ export default {
     padding: '2rem',
     margin: '0 auto',
     width: '300px',
-    backgroundColor: 'var(--gui-color-secondary)',
-    borderRadius: 'var(--radius-2xl)',
+    backgroundColor: 'var(--cui-color-secondary)',
+    borderRadius: 'var(--cui-radius-2xl)',
 
     '> header': {
       fontSize: '3rem',
@@ -27,7 +27,7 @@ export default {
   },
 
   actions: {
-    '--gui-button-background-color': 'var(--gui-color-secondary)',
+    '--cui-button-background-color': 'var(--cui-color-secondary)',
 
     display: 'flex',
     justifyContent: 'flex-end',

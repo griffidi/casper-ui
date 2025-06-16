@@ -94,9 +94,6 @@
     "[toml]": {
       "editor.defaultFormatter": "tamasfe.even-better-toml"
     },
-    "[tailwindcss]": {
-      "editor.defaultFormatter": "biomejs.biome"
-    },
     "[postcss]": {
       "editor.defaultFormatter": "biomejs.biome"
     },
@@ -146,18 +143,14 @@
       "**/.react-router": true
     },
 
-    "files.associations": {
-      "*.css": "tailwindcss"
-    },
+    // "files.associations": {
+    //   "*.css": "tailwindcss"
+    // },
 
     "editor.quickSuggestions": {
       "other": "on",
       "comments": "off",
       "strings": "on"
-    },
-
-    "tailwindCSS.includeLanguages": {
-      "plaintext": "html"
     },
 
     "workbench.editor.labelFormat": "medium",
@@ -203,7 +196,7 @@
     "files.readonlyInclude": {
       "**/routeTree.gen.ts": true
     },
-    "cSpell.words": ["griffel", "isbot", "Noto", "oklch", "Segoe"]
+    "cSpell.words": ["griffel", "isbot", "Noto", "oklch", "Segoe", "unfonts", "unplugin"]
   },
   "extensions": {
     "recommendations": ["biomejs.biome", "prisma.prisma-insider", "task.vscode-task"]

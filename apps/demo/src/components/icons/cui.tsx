@@ -1,14 +1,14 @@
 import type { FC } from 'react';
 
-type GuiProps = {
+type CuiProps = {
   className?: string;
   size?: number;
 };
 
-const GuiIcon: FC<GuiProps> = ({ className, size = 24 }) => {
+const CuiIcon: FC<CuiProps> = ({ className, size = 24 }) => {
   return (
     <svg
-      data-icon="gui-icon"
+      data-icon="cui-icon"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 48 48"
       className={className}
@@ -31,4 +31,4 @@ const GuiIcon: FC<GuiProps> = ({ className, size = 24 }) => {
   );
 };
 
-export default GuiIcon;
+export default CuiIcon;

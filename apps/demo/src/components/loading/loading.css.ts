@@ -14,6 +14,6 @@ export default {
     display: 'grid',
     placeItems: 'center',
     backgroundColor: 'rgba(0, 0, 0, 0.12)',
-    borderRadius: 'var(--radius-2xl)',
+    borderRadius: 'var(--cui-radius-2xl)',
   },
 } satisfies CssStyles;

@@ -47,55 +47,54 @@ body {
 }
 
 input {
-  font-size: var(--gui-font-size);
-  font-weight: var(--gui-font-weight);
+  font-size: var(--cui-text-base);
+  font-weight: var(--cui-font-weight-normal);
+  /* font-weight: var(--cui-text-sm); */
   padding: 0.5rem 0.5rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-gray-700);
-  background-color: var(--gui-color-background-input);
-  color: var(--gui-color-input);
+  border-radius: var(--cui-radius-md);
+  border: 1px solid var(--cui-color-gray-700);
+  background-color: var(--cui-color-background-input);
+  color: var(--cui-color-input);
   outline: none;
-  font-weight: var(--gui-font-weight-input);
 
   &::placeholder {
-    color: var(--gui-color-text-lighter);
+    color: var(--cui-color-text-lighter);
   }
 
   &:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 100px var(--gui-color-text-fill-background) inset;
-    -webkit-text-fill-color: var(--gui-color-text-fill);
+    -webkit-box-shadow: 0 0 0 100px var(--cui-color-text-fill-background) inset;
+    -webkit-text-fill-color: var(--cui-color-text-fill);
   }
   &:autofill {
-    box-shadow: 0 0 0 100px var(--gui-color-text-fill-background) inset;
-    color: var(--gui-color-text-fill);
+    box-shadow: 0 0 0 100px var(--cui-color-text-fill-background) inset;
+    color: var(--cui-color-text-fill);
   }
 }
 
 a {
-  color: var(--gui-color-text);
+  color: var(--cui-color-text);
   text-decoration: none;
-  font-weight: var(--gui-font-weight-bold);
+  font-weight: var(--cui-font-weight-semibold);
   transition: color 0.2s ease-in-out;
 
   &:hover {
-    color: var(--gui-color-primary);
+    color: var(--cui-color-primary);
   }
 }
 
+button {
+  &:has(svg) {
+    cursor: pointer;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    transition: all 0.2s ease-in-out;
+    color: var(--cui-color-text);
 
-  button {
-    &:has(svg) {
-      cursor: pointer;
-      border-radius: 50%;
-      width: 26px;
-      height: 26px;
+    &:hover {
+      transform: scale(1.1);
       transition: all 0.2s ease-in-out;
-      color: var(--gui-color-text);
-
-      &:hover {
-        transform: scale(1.1);
-        transition: all 0.2s ease-in-out;
-        color: var(--gui-color-primary);
-      }
+      color: var(--cui-color-primary);
     }
   }
+}

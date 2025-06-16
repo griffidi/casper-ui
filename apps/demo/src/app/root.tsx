@@ -19,8 +19,6 @@ import { useAuth } from '@/hooks/useAuth.ts';
 import Footer from '@/layout/footer';
 import Header from '@/layout/header';
 import styles from '@/styles/styles.css?url';
-``;
-
 import type { Route } from './+types/root';
 import appStyles from './app.css?url';
 

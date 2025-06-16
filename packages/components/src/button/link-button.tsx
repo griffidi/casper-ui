@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     width: 'fit-content',
     fontSize: '1rem',
     fontWeight: 'bold',
-    color: 'var(--gui-color-text)',
+    color: 'var(--cui-color-text)',
     backgroundColor: 'transparent',
     border: 'none',
     borderRadius: '0.25rem',
@@ -17,12 +17,12 @@ const useStyles = makeStyles({
     transition: 'background-color 0.3s ease',
 
     '&:hover, &:hover svg': {
-      color: 'var(--gui-color-primary)',
+      color: 'var(--cui-color-primary)',
     },
   },
 
   disabled: {
-    backgroundColor: 'var(--gui-color-disabled)',
+    backgroundColor: 'var(--cui-color-disabled)',
     cursor: 'not-allowed',
   },
 
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'center',
     fontSize: '1rem',
-    color: 'var(--gui-color-text)',
+    color: 'var(--cui-color-text)',
     fontWeight: 'bold',
   },
 
@@ -40,7 +40,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'center',
     fontSize: '1.25rem',
-    color: 'var(--gui-color-text)',
+    color: 'var(--cui-color-text)',
     marginRight: '0.5rem',
   },
 });

@@ -2,8 +2,8 @@ import { makeStyles } from '@griffel/react';
 
 const useStyles = makeStyles({
   spinner: {
-    border: '16px solid var(--gui-color-primary)',
-    borderTop: '16px solid var(--gui-color-light-gray)',
+    border: '16px solid var(--cui-color-primary)',
+    borderTop: '16px solid var(--cui-color-light-gray)',
     borderRadius: '50%',
     animationIterationCount: 'infinite',
     animationTimingFunction: 'linear',
@@ -35,7 +35,7 @@ type ProgressSpinnerProps = {
 const ProgressSpinner: React.FC<ProgressSpinnerProps> = ({
   size = 120,
   strokeWidth = 6,
-  color = 'var(--gui-color-primary)',
+  color = 'var(--cui-color-primary)',
   backgroundColor = 'transparent',
   animationDuration = '2.5s',
 }) => {

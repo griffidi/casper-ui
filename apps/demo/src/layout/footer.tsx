@@ -31,7 +31,7 @@ const useStyles = makeStyles({
   },
 
   rights: {
-    fontSize: 'var(--gui-font-size-subtitle)',
+    fontSize: 'var(--cui-text-sm)',
   },
 });
 

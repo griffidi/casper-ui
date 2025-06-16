@@ -4,10 +4,8 @@ packages:
 onlyBuiltDependencies:
   - '@apollo/protobufjs'
   - '@carbon/icon-helpers'
-  - '@carbon/icons-react'
   - '@prisma/client'
   - '@prisma/engines'
-  - '@tailwindcss/oxide'
   - esbuild
   - prisma
 publicHoistPattern:

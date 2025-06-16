@@ -4,14 +4,14 @@ const useStyles = makeStyles({
   progress: {
     width: '100%',
     height: '4px',
-    backgroundColor: 'var(--color-slate-200)',
+    backgroundColor: 'var(--cui-color-slate-200)',
     borderRadius: '2px',
     overflow: 'hidden',
   },
 
   progressBar: {
     height: '100%',
-    backgroundColor: 'var(--color-slate-800)',
+    backgroundColor: 'var(--cui-color-slate-800)',
     transition: 'width 0.3s ease-in-out',
   },
 
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     left: '50%',
     transform: 'translate(-50%, -50%)',
     fontSize: '12px',
-    color: 'var(--color-slate-800)',
+    color: 'var(--cui-color-slate-800)',
   },
 
   progressContainer: {
