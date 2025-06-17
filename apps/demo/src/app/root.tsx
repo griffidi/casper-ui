@@ -86,7 +86,7 @@ export default function App() {
   return (
     <RendererProvider renderer={createDOMRenderer()}>
       <AuthProvider value={auth}>
-        <Header />
+        {auth.isAuthenticated && <Header />}
         <main>
           <Suspense fallback={<Loading />}>
             <Outlet />

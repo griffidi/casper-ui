@@ -275,7 +275,7 @@
   /* background colors */
   --cui-color-background: var(--cui-color-gray-900);
   --cui-color-background-darker: color-mix(in oklab, var(--cui-color-background) 90%, black);
-  --cui-color-background-lighter: color-mix(in oklab, var(--cui-color-background) 97%, white);
+  --cui-color-background-lighter: color-mix(in oklab, var(--cui-color-background) 80%, white);
   --cui-color-background-hover: var(--cui-color-background-darker);
 
   /* text color */

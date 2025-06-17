@@ -2,10 +2,11 @@ import Button from '@cui/components/button/button.tsx';
 import { makeStyles } from '@griffel/react';
 import { useFormStatus } from 'react-dom';
 import { redirect } from 'react-router';
+import type { Route } from '@/+types/index.ts';
 import { commitSession, getSession } from '@/app/sessions.server.ts';
 import { signin } from '@/auth/auth.ts';
+import CuiIcon from '@/components/icons/cui.tsx';
 import { useAuth } from '@/hooks/useAuth.ts';
-import type { Route } from './+types/login.ts';
 import styles from './login.css.ts';
 
 const useStyles = makeStyles(styles);
@@ -70,34 +71,39 @@ export default function Login() {
 
   return (
     <div className={classes.container}>
-      <form method="post" className={classes.form}>
-        <header>
-          <span className="brand-text-color">Login</span>
-        </header>
-        <div>
-          <input
-            type="text"
-            name="username"
-            autoComplete="username"
-            placeholder="Enter your username"
-            required
-            className={classes.input}
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            name="password"
-            autoComplete="current-password"
-            placeholder="Enter your password"
-            required
-            className={classes.input}
-          />
-        </div>
-        <footer className={classes.actions}>
-          <Actions />
-        </footer>
-      </form>
+      <div>
+        <CuiIcon size={366} strokeWidth={1} className={classes.icon} />
+      </div>
+      <div>
+        <form method="post" className={classes.form}>
+          <header>
+            <span className={classes.title}>Login</span>
+          </header>
+          <div>
+            <input
+              type="text"
+              name="username"
+              autoComplete="username"
+              placeholder="Enter your username"
+              required
+              className={classes.input}
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              name="password"
+              autoComplete="current-password"
+              placeholder="Enter your password"
+              required
+              className={classes.input}
+            />
+          </div>
+          <footer className={classes.actions}>
+            <Actions />
+          </footer>
+        </form>
+      </div>
     </div>
   );
 }

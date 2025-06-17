@@ -1,9 +1,7 @@
 import type { FC } from 'react';
+import type { IconProps } from './icon-props.ts';
 
-type GitHubProps = {
-  className?: string;
-  size?: number;
-};
+type GitHubProps = {} & IconProps;
 
 const GitHubIcon: FC<GitHubProps> = ({ className, size = 24 }) => {
   return (

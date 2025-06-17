@@ -40,8 +40,7 @@ body {
   & > main {
     height: calc(100% + (1.25rem * 2));
     width: 100%;
-    margin-block-start: calc(var(--app-header-height) + 1.25rem);
-    margin-block-end: calc(var(--app-footer-height) + 1.25rem);
+    /* margin-block-end: calc(var(--app-footer-height) + 1.25rem); */
     padding-inline: 1.25rem;
   }
 }

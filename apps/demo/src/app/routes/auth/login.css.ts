@@ -3,8 +3,19 @@ import type { CssStyles } from '@cui/components/types/css.ts';
 export default {
   container: {
     display: 'grid',
-    placeItems: 'center',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gridTemplateAreas: 'a b',
     height: '100%',
+    justifyContent: 'flex-end',
+    // '> div:first-child': {
+    //   gridArea: 'a',
+    //   alignSelf: 'center',
+    // },
+
+    // '> div:last-child': {
+    //   gridArea: 'b',
+    //   alignSelf: 'flex-end',
+    // },
   },
 
   form: {
@@ -14,7 +25,6 @@ export default {
     padding: '2rem',
     margin: '0 auto',
     width: '300px',
-    backgroundColor: 'var(--cui-color-secondary)',
     borderRadius: 'var(--cui-radius-2xl)',
 
     '> header': {
@@ -32,5 +42,15 @@ export default {
     display: 'flex',
     justifyContent: 'flex-end',
     alignItems: 'center',
+  },
+
+  title: {
+    fontSize: '2rem',
+    fontWeight: 'var(--cui-font-weight-bold)',
+    color: 'var(--cui-color-primary)',
+  },
+
+  icon: {
+    color: 'var(--cui-color-primary)',
   },
 } satisfies CssStyles;

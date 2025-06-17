@@ -1,9 +1,7 @@
 import type { FC } from 'react';
+import type { IconProps } from './icon-props.ts';
 
-type LinkedInProps = {
-  className?: string;
-  size?: number;
-};
+type LinkedInProps = {} & IconProps;
 
 const LinkedInIcon: FC<LinkedInProps> = ({ className, size = 24 }) => {
   return (
