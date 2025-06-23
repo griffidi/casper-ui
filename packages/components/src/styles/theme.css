@@ -268,7 +268,8 @@
 
   /* primary/secondary colors */
   --cui-color-primary: var(--cui-color-blue-500);
-  --cui-color-primary-lighter: oklch(54.1% 0.281 293.009);
+  --cui-color-primary-lighter: var(--cui-color-blue-400);
+  --cui-color-primary-darker: var(--cui-color-blue-600);
   --cui-color-secondary: var(--cui-color-violet-800);
   --cui-color-gray: var(--cui-color-gray-700);
 

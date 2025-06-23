@@ -5,17 +5,23 @@ export default {
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)',
     gridTemplateAreas: 'a b',
+    gap: '7rem',
     height: '100%',
     justifyContent: 'flex-end',
-    // '> div:first-child': {
-    //   gridArea: 'a',
-    //   alignSelf: 'center',
-    // },
 
-    // '> div:last-child': {
-    //   gridArea: 'b',
-    //   alignSelf: 'flex-end',
-    // },
+    '> div:first-child': {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-end',
+    },
+
+    '> div:last-child': {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-end',
+      alignItems: 'flex-start',
+    },
   },
 
   form: {
@@ -23,7 +29,8 @@ export default {
     flexDirection: 'column',
     gap: '1.3rem',
     padding: '2rem',
-    margin: '0 auto',
+    // margin: '0 auto',
+    marginBottom: '130px',
     width: '300px',
     borderRadius: 'var(--cui-radius-2xl)',
 
@@ -52,5 +59,6 @@ export default {
 
   icon: {
     color: 'var(--cui-color-primary)',
+    marginTop: '50px',
   },
 } satisfies CssStyles;

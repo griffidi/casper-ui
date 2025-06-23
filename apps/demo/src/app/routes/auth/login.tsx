@@ -1,4 +1,4 @@
-import Button from '@cui/components/button/button.tsx';
+import OutlineButton from '@cui/components/button/outline-button.tsx';
 import { makeStyles } from '@griffel/react';
 import { useFormStatus } from 'react-dom';
 import { redirect } from 'react-router';
@@ -60,9 +60,9 @@ const Actions = () => {
   const { pending } = useFormStatus();
 
   return (
-    <Button type="submit" disabled={pending}>
+    <OutlineButton type="submit" disabled={pending}>
       Login
-    </Button>
+    </OutlineButton>
   );
 };
 

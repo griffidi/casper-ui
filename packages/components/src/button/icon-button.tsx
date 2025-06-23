@@ -1,5 +1,5 @@
 import { makeStyles } from '@griffel/react';
-import type { FC, ReactNode } from 'react';
+import type { FC, HTMLAttributes, ReactNode } from 'react';
 
 const useStyles = makeStyles({
   button: {
@@ -22,7 +22,7 @@ type IconButtonProps = {
   icon: ReactNode;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
-} & React.HTMLAttributes<HTMLButtonElement>;
+} & HTMLAttributes<HTMLButtonElement>;
 
 const IconButton: FC<IconButtonProps> = ({
   className,
