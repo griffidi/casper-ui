@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "packageManager": "pnpm@10.11.0",
   "engines": {
-    "node": ">=23.11.0"
+    "node": ">=22.16.0"
   },
   "type": "module",
   "main": "./src/index.ts",
@@ -47,8 +47,8 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@griffel/react": "^1.5.30",
-    "@mui/icons-material": "^7.1.1",
-    "@mui/material": "^7.1.1",
+    "@mui/icons-material": "^7.1.2",
+    "@mui/material": "^7.1.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-tiny-virtual-list": "^2.2.0"

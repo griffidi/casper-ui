@@ -5,7 +5,7 @@
   "license": "MIT",
   "packageManager": "pnpm@10.11.0",
   "engines": {
-    "node": ">=23.11.0"
+    "node": ">=22.16.0"
   },
   "type": "module",
   "scripts": {
@@ -13,7 +13,7 @@
     "lint": "pnpx biome lint"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.0.0-beta.6",
+    "@biomejs/biome": "2.0.4",
     "@types/node": "latest",
     "esbuild": "0.25.5",
     "rimraf": "^6.0.1",
