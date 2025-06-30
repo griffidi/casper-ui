@@ -4,7 +4,11 @@ import type { FC, HTMLAttributes, ReactNode } from 'react';
 const useStyles = makeStyles({
   button: {
     display: 'flex',
+    justifyContent: 'center',
     alignItems: 'center',
+    border: 'none',
+    backgroundColor: 'transparent',
+    padding: '16px',
   },
 
   icon: {
@@ -20,21 +24,30 @@ const useStyles = makeStyles({
 
 type IconButtonProps = {
   icon: ReactNode;
-  type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
+  strokeWidth?: number;
+  type?: 'button' | 'submit' | 'reset';
 } & HTMLAttributes<HTMLButtonElement>;
 
 const IconButton: FC<IconButtonProps> = ({
   className,
-  type = 'button',
-  disabled,
   icon,
+  disabled,
+  strokeWidth = 0,
+  type = 'button',
   ...props
 }) => {
   const classes = useStyles();
+  const border = strokeWidth > 0 ? `${strokeWidth}px solid var(--cui-color-text)` : 'none';
 
   return (
-    <button className={`${classes.button} ${className}`} type={type} disabled={disabled} {...props}>
+    <button
+      className={`${classes.button} ${className}`}
+      type={type}
+      disabled={disabled}
+      style={{ border }}
+      {...props}
+    >
       <span className={classes.icon}>{icon}</span>
     </button>
   );

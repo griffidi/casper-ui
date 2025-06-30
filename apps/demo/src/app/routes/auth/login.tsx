@@ -5,7 +5,7 @@ import { redirect } from 'react-router';
 import type { Route } from '@/+types/index.ts';
 import { commitSession, getSession } from '@/app/sessions.server.ts';
 import { signin } from '@/auth/auth.ts';
-import CuiIcon from '@/components/icons/cui.tsx';
+import GhostSolidIcon from '@/components/icons/ghost-solid.tsx';
 import { useAuth } from '@/hooks/useAuth.ts';
 import styles from './login.css.ts';
 
@@ -72,7 +72,7 @@ export default function Login() {
   return (
     <div className={classes.container}>
       <div>
-        <CuiIcon size={366} strokeWidth={1} className={classes.icon} />
+        <GhostSolidIcon size={366} className={classes.icon} />
       </div>
       <div>
         <form method="post" className={classes.form}>

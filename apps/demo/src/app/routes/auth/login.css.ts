@@ -58,7 +58,11 @@ export default {
   },
 
   icon: {
-    color: 'var(--cui-color-primary)',
     marginTop: '50px',
+
+    '& #ghostSolidFillGradient': {
+      '--cui-icon-ghost-solid-fill-start': 'var(--cui-color-primary-lighter)',
+      '--cui-icon-ghost-solid-fill-end': 'var(--cui-color-primary-darker)',
+    },
   },
 } satisfies CssStyles;

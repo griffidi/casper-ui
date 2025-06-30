@@ -2,7 +2,10 @@ import IconButton from '@cui/components/button/icon-button.tsx';
 import List from '@cui/components/list/list.tsx';
 import NavListItem from '@cui/components/list/nav-list-item.tsx';
 import { makeStyles } from '@griffel/react';
-import { Person2Sharp } from '@mui/icons-material';
+import LogoutIcon from '@mui/icons-material/Logout';
+import Person2Icon from '@mui/icons-material/Person2';
+import SettingsIcon from '@mui/icons-material/Settings';
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import { useId } from 'react';
 import styles from './profile.css.ts';
 
@@ -14,12 +17,12 @@ const Profile = () => {
 
   return (
     <>
-      <IconButton icon={<Person2Sharp />} popoverTarget={menu} />
-      <menu id={menu} className={classes.menu} popover="auto">
+      <IconButton icon={<Person2Icon width={16} height={16} />} popoverTarget={menu} />
+      <menu id={menu} className={classes.popover} popover="auto">
         <List type="navigation">
-          <NavListItem href="/profile" icon={<Person2Sharp />} label="Profile" />
-          <NavListItem href="/settings" icon={<Person2Sharp />} label="Settings" />
-          <NavListItem href="/logout" icon={<Person2Sharp />} label="Logout" />
+          <NavListItem href="/profile" icon={<VerifiedUserIcon />} label="Profile" />
+          <NavListItem href="/settings" icon={<SettingsIcon />} label="Settings" />
+          <NavListItem href="/logout" icon={<LogoutIcon />} label="Logout" />
         </List>
       </menu>
     </>

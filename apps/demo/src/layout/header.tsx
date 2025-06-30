@@ -1,7 +1,8 @@
 import List from '@cui/components/list/list.tsx';
 import NavListItem from '@cui/components/list/nav-list-item.tsx';
 import { makeStyles } from '@griffel/react';
-import CuiIcon from '@/components/icons/cui.tsx';
+import GhostIcon from '@/components/icons/ghost';
+import Profile from '@/components/profile/profile.tsx';
 
 const useStyles = makeStyles({
   header: {
@@ -36,8 +37,11 @@ const Header = () => {
   return (
     <header className={classes.header}>
       <List type="navigation">
-        <NavListItem href="/" icon={<CuiIcon />} />
+        <NavListItem href="/" icon={<GhostIcon />} />
       </List>
+      <div>
+        <Profile />
+      </div>
     </header>
   );
 };
