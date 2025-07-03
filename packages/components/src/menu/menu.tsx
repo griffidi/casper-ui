@@ -1,4 +1,4 @@
-import { , type FC, type HTMLAttributes, useId } from 'react';
+import { type FC, type HTMLAttributes, useId } from 'react';
 
 type MenuProps = {
   // Define any props you want to pass to the Menu component
