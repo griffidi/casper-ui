@@ -12,8 +12,13 @@ const useStyles = makeStyles({
     cursor: 'pointer',
 
     '&:hover': {
-      border: '2px solid var(--cui-color-primary-lighter)',
-      color: 'var(--cui-color-primary-lighter)',
+      border: '2px solid var(--cui-color-primary-darker)',
+      color: 'var(--cui-color-primary-darker)',
+
+      '& > span': {
+        transform: 'scale(1.5)',
+        transition: 'transform 0.2s ease',
+      },
     },
   },
 });
@@ -27,7 +32,7 @@ const OutlineButton: FC<OutlineButtonProps> = ({ children, disabled, type, ...pr
 
   return (
     <button className={`${classes.button} cui-button`} disabled={disabled} type={type} {...props}>
-      {children}
+      <span className="cui-outlinebutton-children">{children}</span>
     </button>
   );
 };

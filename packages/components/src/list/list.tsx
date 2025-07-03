@@ -8,7 +8,6 @@ const useStyles = makeStyles({
     listStyle: 'none',
     margin: 0,
     padding: 0,
-    gap: '0.5rem',
   },
 });
 

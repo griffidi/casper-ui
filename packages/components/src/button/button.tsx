@@ -17,7 +17,13 @@ const useStyles = makeStyles({
     transition: 'background-color 0.3s ease',
 
     '&:hover': {
-      backgroundColor: '#0056b3',
+      // backgroundColor: '#0056b3',
+      backgroundColor: 'var(--cui-color-primary-darker)',
+      color: 'var(--cui-color-primary-darker)',
+      // WebkitBackgroundClip: 'text',
+      // WebkitTextFillColor: 'transparent',
+      // backgroundColor: 'var(--cui-color-gradient-primary)',
+      // color: 'var(--cui-color-gradient-primary)',
     },
 
     '&:disabled': {

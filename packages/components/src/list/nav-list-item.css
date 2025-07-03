@@ -1,0 +1,29 @@
+.cui-nav-list-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--cui-color-text);
+  background: var(--cui-color-background);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background: var(--cui-color-hover);
+  }
+
+  &:active {
+    background: var(--cui-color-active);
+  }
+
+  &:disabled {
+    background: var(--cui-color-disabled);
+    cursor: not-allowed;
+  }
+
+  & .cui-link-button {
+    font-size: 0.875rem;
+    padding-inline-end: 1rem;
+  }
+}

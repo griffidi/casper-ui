@@ -196,6 +196,7 @@
     "files.readonlyInclude": {
       "**/routeTree.gen.ts": true
     },
+
     "cSpell.words": ["griffel", "isbot", "Noto", "oklch", "Segoe", "unfonts", "unplugin"]
   },
   "extensions": {

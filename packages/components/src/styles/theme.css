@@ -293,6 +293,10 @@
   --cui-color-disabled-button: var(--cui-color-slate-600);
   --cui-color-disabled-button-text: var(--cui-color-slate-300);
 
+  --cui-color-background-level-2: var(--cui-color-slate-800);
+  --cui-color-background-level-3: var(--cui-color-slate-700);
+  --cui-color-background-level-4: var(--cui-color-slate-600);
+
   /* gradient colors */
   --cui-color-gradient-brand: linear-gradient(
     90deg,
@@ -303,6 +307,11 @@
     90deg,
     var(--cui-color-violet-800) 0%,
     var(--cui-color-blue-700) 100%
+  );
+  --cui-color-gradient-primary: linear-gradient(
+    90deg,
+    var(--cui-color-primary-lighter) 0%,
+    var(--cui-color-primary-darker) 100%
   );
 
   --cui-spacing: 0.25rem;

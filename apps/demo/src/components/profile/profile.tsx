@@ -3,7 +3,7 @@ import List from '@cui/components/list/list.tsx';
 import NavListItem from '@cui/components/list/nav-list-item.tsx';
 import { makeStyles } from '@griffel/react';
 import LogoutIcon from '@mui/icons-material/Logout';
-import Person2Icon from '@mui/icons-material/Person2';
+import Person2Icon from '@mui/icons-material/Person2Outlined';
 import SettingsIcon from '@mui/icons-material/Settings';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import { useId } from 'react';

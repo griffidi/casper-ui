@@ -1,0 +1,44 @@
+.cui-link-button {
+  --_font-size: var(--cui-link-button-font-size, 1rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-size: var(--_font-size);
+  font-weight: var(--cui-font-weight-bold);
+  color: var(--cui-color-text);
+  background: transparent;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover,
+  &:hover svg {
+    color: var(--cui-color-primary);
+  }
+}
+
+.cui-link-button-disabled {
+  background: var(--cui-color-disabled);
+  cursor: not-allowed;
+}
+
+.cui-link-button-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: inherit;
+  color: var(--cui-color-text);
+  font-weight: var(--cui-font-weight-normal);
+}
+
+.cui-link-button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--cui-color-text);
+  margin-right: 0.5rem;
+}
