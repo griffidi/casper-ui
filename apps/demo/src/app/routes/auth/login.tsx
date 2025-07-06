@@ -30,8 +30,7 @@ export async function action({ request }: Route.ActionArgs) {
   const form = await request.formData();
   const username = form.get('username')?.toString()!;
   const password = form.get('password')?.toString()!;
-  const token = await signin(username, password);
-
+  const { token, userId } = await signin(username, password);
   const session = await getSession(request.headers.get('Cookie'));
 
   // If the token is not valid, flash an error message and redirect back to the login page.
@@ -52,6 +51,7 @@ export async function action({ request }: Route.ActionArgs) {
   session.set(
     'userId',
     JSON.stringify({
+      userId,
       username,
       token,
     }),

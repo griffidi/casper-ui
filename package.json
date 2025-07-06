@@ -13,7 +13,7 @@
     "lint": "pnpx biome lint"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.0.4",
+    "@biomejs/biome": "2.0.6",
     "@types/node": "latest",
     "esbuild": "0.25.5",
     "rimraf": "^6.0.1",

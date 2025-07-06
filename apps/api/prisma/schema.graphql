@@ -1247,7 +1247,7 @@ type Query {
   groupByState(by: [StateScalarFieldEnum!]!, having: StateScalarWhereWithAggregatesInput, orderBy: [StateOrderByWithAggregationInput!], skip: Int, take: Int, where: StateWhereInput): [StateGroupBy!]!
   groupByUser(by: [UserScalarFieldEnum!]!, having: UserScalarWhereWithAggregatesInput, orderBy: [UserOrderByWithAggregationInput!], skip: Int, take: Int, where: UserWhereInput): [UserGroupBy!]!
   search(query: String!): [SearchResult!]
-  signin(password: String!, username: String!): String
+  signin(password: String!, username: String!): SigninResponse
   signout: Boolean!
   state(where: StateWhereUniqueInput!): State
   states(cursor: StateWhereUniqueInput, distinct: [StateScalarFieldEnum!], orderBy: [StateOrderByWithRelationInput!], skip: Int, take: Int, where: StateWhereInput): [State!]!
@@ -1260,6 +1260,11 @@ type SearchResult {
   id: String
   name: String
   type: Float
+}
+
+type SigninResponse {
+  token: String!
+  userId: String!
 }
 
 enum SortOrder {

@@ -32,7 +32,11 @@ export type Auth = {
  */
 export const useAuth = async (request: Request): Promise<Auth> => {
   const session = await getSession(request.headers.get('Cookie'));
-  const userId = await session.get('userId')!;
-  const { token = null, username = null } = userId ? (JSON.parse(userId) as AuthSession) : {};
+  const userIdString = await session.get('userId')!;
+  const {
+    token = null,
+    username = null,
+    userId = null,
+  } = userIdString ? (JSON.parse(userIdString) as AuthSession) : {};
   return { token, username, userId, isAuthenticated: !!token } as const;
 };

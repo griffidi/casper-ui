@@ -1,6 +1,6 @@
 import { GraphQLError } from 'graphql';
 import jwt from 'jsonwebtoken';
-import { Args, ArgsType, Ctx, Field, Query, Resolver } from 'type-graphql';
+import { Args, ArgsType, Ctx, Field, ObjectType, Query, Resolver } from 'type-graphql';
 import type { Context } from '../client/context.js';
 import { accessTokenSecret } from '../config.ts';
 // import { compareHash } from '../crypto/hash.js';
@@ -14,6 +14,14 @@ export class SigninArgs {
   password: string;
 }
 
+@ObjectType()
+export class SigninResponse {
+  @Field(() => String)
+  token: string;
+  @Field(() => String)
+  userId: string;
+}
+
 @Resolver()
 export class AuthResolver {
   /**
@@ -23,11 +31,11 @@ export class AuthResolver {
    * @param {Context} { prisma } Prisma client.
    * @returns {Promise<string>} JWT if valid, null if invalid.
    */
-  @Query(() => String, { nullable: true })
+  @Query(() => SigninResponse, { nullable: true })
   async signin(
     @Args(() => SigninArgs) { username, password }: SigninArgs,
     @Ctx() { prisma }: Context,
-  ): Promise<string | null> {
+  ): Promise<{ token: string; userId: string } | null> {
     const user = await prisma.user.findFirst({
       where: {
         email: username,
@@ -51,10 +59,10 @@ export class AuthResolver {
 
     if (isValid) {
       // credentials are valid, so return a JWT
-      const token = jwt.sign({ username, userId: user.id }, accessTokenSecret!, {
+      const token = jwt.sign({ username }, accessTokenSecret!, {
         expiresIn: '1h',
       });
-      return token;
+      return { token, userId: user.id };
     }
 
     return null;

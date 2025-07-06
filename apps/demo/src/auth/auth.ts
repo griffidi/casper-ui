@@ -18,17 +18,17 @@ export const signin = async (username: string, password: string) => {
     },
     fetchPolicy: 'no-cache',
   });
-  const { signin: token = null } = data;
+  const { token, userId } = data.signin || {};
 
-  return token;
+  return { token, userId };
 };
 
 /**
- * Signs the user out by calling the Signout GraphQL mutation.
+ * Signs the user out by calling the Signout GraphQL query.
  *
  * @returns {boolean} - Returns true if the signout was successful, false otherwise.
  */
-export const signOut = async () => {
+export const signout = async () => {
   const client = createApolloClient(clientConfig);
   const { data } = await client.query({ query: Signout, fetchPolicy: 'no-cache' });
   const { signout } = data;

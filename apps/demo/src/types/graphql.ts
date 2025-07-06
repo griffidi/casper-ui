@@ -1437,7 +1437,7 @@ export type Query = {
   readonly groupByState: ReadonlyArray<StateGroupBy>;
   readonly groupByUser: ReadonlyArray<UserGroupBy>;
   readonly search?: Maybe<ReadonlyArray<SearchResult>>;
-  readonly signin?: Maybe<Scalars['String']['output']>;
+  readonly signin?: Maybe<SigninResponse>;
   readonly signout: Scalars['Boolean']['output'];
   readonly state?: Maybe<State>;
   readonly states: ReadonlyArray<State>;
@@ -1667,6 +1667,11 @@ export type SearchResult = {
   readonly id?: Maybe<Scalars['String']['output']>;
   readonly name?: Maybe<Scalars['String']['output']>;
   readonly type?: Maybe<Scalars['Float']['output']>;
+};
+
+export type SigninResponse = {
+  readonly token: Scalars['String']['output'];
+  readonly userId: Scalars['String']['output'];
 };
 
 export enum SortOrder {
@@ -2504,7 +2509,9 @@ export type SigninQueryVariables = Exact<{
   password: Scalars['String']['input'];
 }>;
 
-export type SigninQuery = { readonly signin?: string | undefined };
+export type SigninQuery = {
+  readonly signin?: { readonly token: string; readonly userId: string } | undefined;
+};
 
 export type SignoutQueryVariables = Exact<{ [key: string]: never }>;
 
@@ -2642,6 +2649,12 @@ export type GetSearchResultsQuery = {
     | undefined;
 };
 
+export type GetUserQueryVariables = Exact<{
+  username: Scalars['String']['input'];
+}>;
+
+export type GetUserQuery = { readonly user?: { readonly id: string } | undefined };
+
 export type CustomerPartsFragment = {
   readonly id: string;
   readonly name: string;
@@ -2735,6 +2748,13 @@ export const Signin = {
                 value: { kind: 'Variable', name: { kind: 'Name', value: 'password' } },
               },
             ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'token' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'userId' } },
+              ],
+            },
           },
         ],
       },
@@ -3215,3 +3235,52 @@ export const GetSearchResults = {
     },
   ],
 } as unknown as DocumentNode<GetSearchResultsQuery, GetSearchResultsQueryVariables>;
+export const GetUser = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'getUser' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'username' } },
+          type: {
+            kind: 'NonNullType',
+            type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'user' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'where' },
+                value: {
+                  kind: 'ObjectValue',
+                  fields: [
+                    {
+                      kind: 'ObjectField',
+                      name: { kind: 'Name', value: 'email' },
+                      value: { kind: 'Variable', name: { kind: 'Name', value: 'username' } },
+                    },
+                  ],
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [{ kind: 'Field', name: { kind: 'Name', value: 'id' } }],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetUserQuery, GetUserQueryVariables>;

@@ -8,7 +8,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import { useContext, useId } from 'react';
 import { useNavigate } from 'react-router';
-import { signOut } from '@/auth/auth.ts';
+import { signout } from '@/auth/auth.ts';
 import { AuthContext } from '@/auth/auth-context.tsx';
 import styles from './profile.css.ts';
 
@@ -28,7 +28,7 @@ const Profile = () => {
   // It will call the signOut function and navigate to the logout page on success.
   // If signOut fails, it will not navigate.
   const signOutHandler = async () => {
-    const success = await signOut();
+    const success = await signout();
 
     if (!success) return;
 
@@ -41,7 +41,11 @@ const Profile = () => {
       <menu id={menu} className={classes.popover} popover="auto">
         <List type="navigation">
           <NavListItem href={`/users/${userId}`} icon={<VerifiedUserIcon />} label="Profile" />
-          <NavListItem href="/settings" icon={<SettingsIcon />} label="Settings" />
+          <NavListItem
+            href={`/users/${userId}/settings`}
+            icon={<SettingsIcon />}
+            label="Settings"
+          />
           <NavListItem href="#" icon={<LogoutIcon />} label="Logout" onClick={signOutHandler} />
         </List>
       </menu>
