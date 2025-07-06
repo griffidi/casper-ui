@@ -1,7 +1,7 @@
 .cui-nav-list-item {
   display: flex;
   align-items: center;
-  padding: 0.5rem 1rem;
+  /* padding: 0.5rem; */
   width: 100%;
   font-size: 1rem;
   color: var(--cui-color-text);
@@ -26,4 +26,8 @@
     font-size: 0.875rem;
     padding-inline-end: 1rem;
   }
+}
+
+menu .cui-nav-list-item {
+  padding: 0.5rem 1rem;
 }
