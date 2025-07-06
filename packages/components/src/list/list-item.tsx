@@ -1,44 +1,27 @@
-import { makeStyles } from '@griffel/react';
-import type { HTMLAttributes } from 'react';
-
-const useStyles = makeStyles({
-  listItem: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: '0.5rem 1rem',
-    width: 'fit-content',
-    fontSize: '1rem',
-    color: 'var(--cui-color-text)',
-    backgroundColor: 'var(--cui-color-background)',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s ease',
-
-    '&:hover': {
-      backgroundColor: 'var(--cui-color-hover)',
-    },
-
-    '&:active': {
-      backgroundColor: 'var(--cui-color-active)',
-    },
-
-    '&:disabled': {
-      backgroundColor: 'var(--cui-color-disabled)',
-      cursor: 'not-allowed',
-    },
-  },
-});
+import type { HTMLAttributes, ReactNode } from 'react';
 
 type ListItemProps = {
   disabled?: boolean;
+  icon?: ReactNode;
   label?: string;
 } & HTMLAttributes<HTMLLIElement>;
 
-const ListItem = ({ disabled, label, ...props }: ListItemProps) => {
-  const classes = useStyles();
-
+/**
+ * ListItem is a component that represents an item in a list.
+ * It can include an icon and a label, and can be disabled.
+ *
+ * @param {ListItemProps} props - The properties for the ListItem component.
+ * @returns {JSX.Element} The rendered ListItem component.
+ */
+const ListItem = ({ disabled, icon, label, ...props }: ListItemProps) => {
   return (
-    <li className={classes.listItem} aria-disabled={disabled} {...props}>
-      {label}
+    <li
+      className={`cui-list-item ${disabled ? 'disabled' : ''}`}
+      aria-disabled={disabled}
+      {...props}
+    >
+      {icon && <span className="cui-list-item-icon">{icon}</span>}
+      {label && <span className="cui-list-item-label">{label}</span>}
     </li>
   );
 };

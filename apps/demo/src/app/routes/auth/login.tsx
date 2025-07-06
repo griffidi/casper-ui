@@ -11,6 +11,11 @@ import styles from './login.css.ts';
 
 const useStyles = makeStyles(styles);
 
+/**
+ * Loader function to check if the user is authenticated.
+ * If authenticated, redirect to the home page. Otherwise,
+ * return the isAuthenticated state.
+ */
 export async function loader({ request }: Route.LoaderArgs) {
   const { isAuthenticated } = await useAuth(request);
 
@@ -29,6 +34,9 @@ export async function action({ request }: Route.ActionArgs) {
 
   const session = await getSession(request.headers.get('Cookie'));
 
+  // If the token is not valid, flash an error message and redirect back to the login page.
+  // This is a simple example, in a real application you would want to handle this more gracefully,
+  // such as showing a message on the login page.
   if (!token) {
     session.flash('error', 'Invalid username/password');
 
@@ -40,6 +48,7 @@ export async function action({ request }: Route.ActionArgs) {
     });
   }
 
+  // Store the user information in the session.
   session.set(
     'userId',
     JSON.stringify({
@@ -56,6 +65,11 @@ export async function action({ request }: Route.ActionArgs) {
   });
 }
 
+/**
+ * Actions component for the login form.
+ * It uses the `useFormStatus` hook to determine if the form is pending submission,
+ * and disables the button accordingly.
+ */
 const Actions = () => {
   const { pending } = useFormStatus();
 

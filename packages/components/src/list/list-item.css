@@ -1,0 +1,43 @@
+.cui-list-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  color: var(--cui-color-text);
+  background: var(--cui-color-background);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.875rem;
+  padding-inline-end: 1rem;
+
+  &:hover {
+    background: var(--cui-color-hover);
+  }
+
+  &:active {
+    background: var(--cui-color-active);
+  }
+
+  &.disabled {
+    background: var(--cui-color-disabled);
+    cursor: not-allowed;
+  }
+
+  .cui-list-item-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: inherit;
+    color: var(--cui-color-text);
+    font-weight: var(--cui-font-weight-normal);
+  }
+
+  .cui-list-item-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--cui-color-text);
+    margin-right: 0.5rem;
+  }
+}

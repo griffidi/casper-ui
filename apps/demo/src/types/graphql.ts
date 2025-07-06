@@ -1438,6 +1438,7 @@ export type Query = {
   readonly groupByUser: ReadonlyArray<UserGroupBy>;
   readonly search?: Maybe<ReadonlyArray<SearchResult>>;
   readonly signin?: Maybe<Scalars['String']['output']>;
+  readonly signout: Scalars['Boolean']['output'];
   readonly state?: Maybe<State>;
   readonly states: ReadonlyArray<State>;
   readonly user?: Maybe<User>;
@@ -2505,6 +2506,10 @@ export type SigninQueryVariables = Exact<{
 
 export type SigninQuery = { readonly signin?: string | undefined };
 
+export type SignoutQueryVariables = Exact<{ [key: string]: never }>;
+
+export type SignoutQuery = { readonly signout: boolean };
+
 export type GetCustomerContactsQueryVariables = Exact<{
   customerId: Scalars['String']['input'];
 }>;
@@ -2736,6 +2741,20 @@ export const Signin = {
     },
   ],
 } as unknown as DocumentNode<SigninQuery, SigninQueryVariables>;
+export const Signout = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'signout' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [{ kind: 'Field', name: { kind: 'Name', value: 'signout' } }],
+      },
+    },
+  ],
+} as unknown as DocumentNode<SignoutQuery, SignoutQueryVariables>;
 export const GetCustomerContacts = {
   kind: 'Document',
   definitions: [

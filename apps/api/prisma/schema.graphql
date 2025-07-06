@@ -1248,6 +1248,7 @@ type Query {
   groupByUser(by: [UserScalarFieldEnum!]!, having: UserScalarWhereWithAggregatesInput, orderBy: [UserOrderByWithAggregationInput!], skip: Int, take: Int, where: UserWhereInput): [UserGroupBy!]!
   search(query: String!): [SearchResult!]
   signin(password: String!, username: String!): String
+  signout: Boolean!
   state(where: StateWhereUniqueInput!): State
   states(cursor: StateWhereUniqueInput, distinct: [StateScalarFieldEnum!], orderBy: [StateOrderByWithRelationInput!], skip: Int, take: Int, where: StateWhereInput): [State!]!
   user(where: UserWhereUniqueInput!): User

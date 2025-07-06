@@ -8,6 +8,7 @@ import {
   type LoaderFunctionArgs,
   Meta,
   Outlet,
+  redirect,
   Scripts,
   ScrollRestoration,
   useLoaderData,
@@ -52,11 +53,22 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-const client = createApolloClient(clientConfig);
-
+/**
+ * This loader function checks if the user is authenticated.
+ * If not authenticated and not on the login page, it redirects to the login page.
+ * It also provides the authentication state to the application.
+ */
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const { isAuthenticated, username } = await useAuth(request);
-  return { isAuthenticated, username };
+  const { isAuthenticated, username, userId } = await useAuth(request);
+  const { pathname } = new URL(request.url);
+
+  if (!isAuthenticated && !/\/login/.test(pathname)) {
+    const params = new URLSearchParams();
+    params.set('from', pathname);
+    return redirect(`/login?${params.toString()}`);
+  }
+
+  return { isAuthenticated, username, userId, request } as const;
 };
 
 export function Layout({ children }: { children: React.ReactElement | React.ReactElement[] }) {
@@ -71,7 +83,7 @@ export function Layout({ children }: { children: React.ReactElement | React.Reac
       </head>
       <body>
         <StrictMode>
-          <ApolloProvider client={client}>{children}</ApolloProvider>
+          <ApolloProvider client={createApolloClient(clientConfig)}>{children}</ApolloProvider>
         </StrictMode>
         <ScrollRestoration />
         <Scripts />

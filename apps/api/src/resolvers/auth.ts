@@ -33,6 +33,7 @@ export class AuthResolver {
         email: username,
       },
       select: {
+        id: true,
         password: true,
       },
     });
@@ -50,12 +51,24 @@ export class AuthResolver {
 
     if (isValid) {
       // credentials are valid, so return a JWT
-      const token = jwt.sign({ username }, accessTokenSecret!, {
+      const token = jwt.sign({ username, userId: user.id }, accessTokenSecret!, {
         expiresIn: '1h',
       });
       return token;
     }
 
     return null;
+  }
+
+  /**
+   * Sign user out.
+   */
+  @Query(() => Boolean)
+  signout() {
+    jwt.sign({}, accessTokenSecret!, {
+      expiresIn: '1s', // Expire the token immediately
+    });
+
+    return true;
   }
 }
