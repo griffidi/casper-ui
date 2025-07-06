@@ -15,7 +15,8 @@
   transition: background 0.3s ease;
 
   &:hover,
-  &:hover svg {
+  &:hover svg,
+  &:hover .cui-link-button-label {
     color: var(--cui-color-primary);
   }
 }
@@ -25,6 +26,7 @@
   cursor: not-allowed;
 }
 
+/* biome-ignore lint/style/noDescendingSpecificity: Prevent specificity issues with link button label */
 .cui-link-button-label {
   display: inline-flex;
   align-items: center;

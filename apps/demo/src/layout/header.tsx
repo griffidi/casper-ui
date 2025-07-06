@@ -15,18 +15,11 @@ const useStyles = makeStyles({
   nav: {
     display: 'flex',
     alignItems: 'center',
+    gap: '4rem',
 
-    '& ul': {
-      display: 'flex',
-      listStyle: 'none',
-      margin: 0,
-      padding: 0,
-      gap: '0.3rem',
-    },
-
-    '& li': {
-      margin: 0,
-      padding: 0,
+    '& .cui-link-button': {
+      fontSize: 'var(--cui-text-lg)',
+      fontWeight: 'var(--cui-font-semibold)',
     },
   },
 });
@@ -36,9 +29,15 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <List type="navigation">
-        <NavListItem href="/" icon={<GhostIcon />} />
-      </List>
+      <div className={classes.nav}>
+        <List align="horizontal" type="navigation">
+          <NavListItem href="/" icon={<GhostIcon />} />
+        </List>
+        <List align="horizontal" type="navigation">
+          <NavListItem href="/users" label="Users" />
+          <NavListItem href="/customers" label="Customers" />
+        </List>
+      </div>
       <div>
         <Profile />
       </div>
