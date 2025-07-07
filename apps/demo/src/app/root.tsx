@@ -21,7 +21,6 @@ import Footer from '@/layout/footer';
 import Header from '@/layout/header';
 import styles from '@/styles/styles.css?url';
 import type { Route } from './+types/root';
-import appStyles from './app.css?url';
 
 export const links: Route.LinksFunction = () => [
   {
@@ -37,11 +36,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
-  },
-  {
-    rel: 'stylesheet',
-    href: appStyles,
+    href: 'https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700;900&display=swap',
   },
   {
     rel: 'stylesheet',

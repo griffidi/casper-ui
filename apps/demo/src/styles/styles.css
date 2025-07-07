@@ -1,8 +1,27 @@
 @import "./variables.css";
+@import "./reset.css";
 @import "./layout.css";
 
-* {
-  box-sizing: border-box;
+:root {
+  --cui-font-inter: "League Spartan", sans-serif;
+}
+
+html,
+body {
+  font-family: var(--cui-font-inter);
+  font-size: var(--cui-text-base);
+  line-height: var(--cui-text-base--cui-line-height);
+  color: var(--cui-color-gray-900);
+  background: var(--cui-color-white);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+    color: var(--cui-color-gray-100);
+    background: var(--cui-color-gray-900);
+  }
 }
 
 .brand-text-color {

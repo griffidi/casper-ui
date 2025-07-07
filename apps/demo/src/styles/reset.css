@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "League Spartan", monospace;
+  /* biome-ignore lint/correctness/noUnknownProperty: new feature */
+  font-smooth: smooth;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  width: 100%;
+}
+
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+:link,
+:visited {
+  color: inherit;
+}
