@@ -40,7 +40,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
   color: var(--cui-color-text);
   margin-right: 0.5rem;
 }

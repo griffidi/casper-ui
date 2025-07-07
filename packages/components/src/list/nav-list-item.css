@@ -1,9 +1,7 @@
 .cui-nav-list-item {
   display: flex;
   align-items: center;
-  /* padding: 0.5rem; */
   width: 100%;
-  font-size: 1rem;
   color: var(--cui-color-text);
   background: var(--cui-color-background);
   cursor: pointer;
@@ -23,11 +21,16 @@
   }
 
   & .cui-link-button {
-    font-size: 0.875rem;
+    font-size: var(--cui-text-sm);
     padding-inline-end: 1rem;
+  }
+
+  svg {
+    width: 21px;
+    height: 21px;
   }
 }
 
 menu .cui-nav-list-item {
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
 }

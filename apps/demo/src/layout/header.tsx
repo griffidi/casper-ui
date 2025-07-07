@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     gap: '4rem',
 
     '& .cui-link-button': {
-      fontSize: 'var(--cui-text-lg)',
+      fontSize: 'var(--cui-text-xl)',
       fontWeight: 'var(--cui-font-semibold)',
     },
   },
