@@ -52,7 +52,7 @@
     "pnpm": "latest",
     "prettier": "^3.6.2",
     "react-router-devtools": "^5.0.6",
-    "vite": "^7.0.2",
+    "vite": "^7.0.7",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "peerDependencies": {
